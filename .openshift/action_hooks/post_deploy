@@ -1,0 +1,9 @@
+#!/bin/bash
+# This is a simple post deploy hook executed after your application 
+# is deployed and started.  This script gets executed directly, so 
+# it could be python, php, ruby, etc.
+
+cd $OPENSHIFT_REPO_DIR
+chmod 600 ./ssh/id_rsa
+chmod 600 ./mongo/repl_key
+nohup python main.py start post_deploy > $OPENSHIFT_DIY_LOG_DIR/server.log 2>&1 &

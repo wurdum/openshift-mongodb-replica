@@ -1,0 +1,3 @@
+curl $INSTANCEURL1/metrics/ > /dev/null 2>&1 &
+curl $INSTANCEURL2/metrics/ > /dev/null 2>&1 &
+curl $INSTANCEURL3/metrics/ > /dev/null 2>&1 &

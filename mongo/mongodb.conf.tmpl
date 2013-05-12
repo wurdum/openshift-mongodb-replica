@@ -1,0 +1,22 @@
+bind_ip = $OPENSHIFT_INTERNAL_IP
+port = $MONGO_INSTANCE_PORT
+
+fork = true
+auth = true
+directoryperdb = true
+nohttpinterface = true
+logappend = true
+nojournal = true
+
+logpath = $OPENSHIFT_DIY_LOG_DIR/mongodb.log
+dbpath = $OPENSHIFT_DATA_DIR/mongo/data/
+pidfilepath = $OPENSHIFT_DATA_DIR/mongo/pid/mongodb.pid
+keyFile = $OPENSHIFT_REPO_DIR/mongo/repl_key
+
+smallfiles = true
+
+quota = true
+quotaFiles = 4
+
+replSet = mdb
+oplogSize = 128
